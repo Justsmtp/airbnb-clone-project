@@ -100,6 +100,112 @@ The backend for the Airbnb Clone project provides a robust and scalable foundati
 
 ## 📌 Summary of REST Endpoints
 
+## 🗄️ Database Design
+
+The Airbnb Clone backend consists of five primary entities. Each entity is related to others through foreign key relationships to support seamless data interaction.
+
+---
+
+### 📘 Entities & Relationships
+
+---
+
+### **1. Users**
+Represents people using the platform either as guests or hosts.
+
+**Key Fields:**
+- `id` (UUID)
+- `name`
+- `email`
+- `password` (hashed)
+- `is_host` (Boolean)
+
+**Relationships:**
+- A **user** can **own multiple properties**
+- A **user** can **make multiple bookings**
+- A **user** can **leave multiple reviews**
+
+---
+
+### **2. Properties**
+Represents rental listings created by hosts.
+
+**Key Fields:**
+- `id`
+- `title`
+- `description`
+- `location`
+- `price_per_night`
+- `host_id` (ForeignKey → Users)
+
+**Relationships:**
+- A **property** is owned by one **user (host)**
+- A **property** can have multiple **bookings**
+- A **property** can have multiple **reviews**
+
+---
+
+### **3. Bookings**
+Represents a reservation made by a user for a specific property.
+
+**Key Fields:**
+- `id`
+- `user_id` (ForeignKey → Users)
+- `property_id` (ForeignKey → Properties)
+- `start_date`
+- `end_date`
+- `status` (confirmed, cancelled, etc.)
+
+**Relationships:**
+- A **booking** is made by one **user**
+- A **booking** is associated with one **property**
+- A **booking** may be associated with one **payment**
+
+---
+
+### **4. Reviews**
+Represents feedback given by users after a stay.
+
+**Key Fields:**
+- `id`
+- `user_id` (ForeignKey → Users)
+- `property_id` (ForeignKey → Properties)
+- `rating` (1–5)
+- `comment`
+
+**Relationships:**
+- A **review** belongs to one **user**
+- A **review** is associated with one **property**
+
+---
+
+### **5. Payments**
+Represents transaction details for a booking.
+
+**Key Fields:**
+- `id`
+- `booking_id` (ForeignKey → Bookings)
+- `amount`
+- `status` (paid, failed, pending)
+- `payment_date`
+
+**Relationships:**
+- A **payment** is tied to one **booking**
+
+---
+
+### 📐 Summary of Relationships
+
+- **User —< Property**
+- **User —< Booking —> Property**
+- **User —< Review —> Property**
+- **Booking — Payment**
+
+---
+
+_This structure ensures referential integrity and scalable interactions across the platform._
+
+
 ### **Users**
 GET /users/
 POST /users/
