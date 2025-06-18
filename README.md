@@ -245,6 +245,59 @@ Allows users to leave ratings and reviews for properties they've stayed in. Revi
 
 Implements indexing and caching strategies to improve database performance. This ensures efficient data retrieval, especially for frequently accessed endpoints such as property searches and booking histories.
 
+## 🔐 API Security
+
+Ensuring the security of the backend APIs is essential to protect user data, prevent unauthorized access, and maintain the integrity of the platform. The following security measures are implemented to safeguard the Airbnb Clone backend:
+
+---
+
+### 🧾 Authentication
+
+**Description**: Implements token-based authentication using JWT (JSON Web Tokens) to verify the identity of users accessing the API.
+
+**Importance**: Prevents unauthorized users from accessing protected endpoints and ensures that only authenticated users can perform actions like creating bookings or listing properties.
+
+---
+
+### 🛂 Authorization
+
+**Description**: Role-based access control (RBAC) is enforced to differentiate between users (guests) and hosts, ensuring each role can only access permitted resources.
+
+**Importance**: Protects the system by restricting sensitive operations—such as property management or viewing payment details—to authorized users only.
+
+---
+
+### 🚦 Rate Limiting
+
+**Description**: Limits the number of requests a client can make in a given timeframe to prevent API abuse.
+
+**Importance**: Shields the backend from denial-of-service (DoS) attacks and ensures fair usage for all users.
+
+---
+
+### 🔒 Data Encryption
+
+**Description**: All sensitive data, such as passwords and payment information, is encrypted in transit (via HTTPS) and at rest (in the database).
+
+**Importance**: Safeguards user credentials and financial data from being intercepted or leaked during transmission or storage.
+
+---
+
+### 🧪 Input Validation & Sanitization
+
+**Description**: Validates and sanitizes incoming request data to prevent injection attacks (e.g., SQL injection, XSS).
+
+**Importance**: Helps maintain data integrity and prevents malicious data from compromising the application.
+
+---
+
+### 🎫 Secure Payment Processing
+
+**Description**: Payment processing endpoints require strict authentication and secure payload handling.
+
+**Importance**: Ensures the confidentiality and integrity of transaction data and prevents fraudulent payments.
+
+
 
 
 ### **Users**
