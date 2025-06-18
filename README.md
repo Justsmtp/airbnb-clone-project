@@ -205,6 +205,47 @@ Represents transaction details for a booking.
 
 _This structure ensures referential integrity and scalable interactions across the platform._
 
+## 🧩 Feature Breakdown
+
+This section outlines the core features of the Airbnb Clone backend. Each feature plays a vital role in delivering a complete and functional booking platform experience.
+
+---
+
+### 🔐 User Management
+
+Handles user registration, login, and profile management. It ensures secure access to the platform and distinguishes between guests and hosts through role-based controls.
+
+---
+
+### 🏡 Property Management
+
+Allows hosts to create, update, retrieve, and delete property listings. Each property includes details such as title, location, price, and description, enabling users to browse and find suitable accommodations.
+
+---
+
+### 📅 Booking System
+
+Enables users to reserve properties for specific dates. It validates availability, handles check-in/check-out logic, and allows users to view or manage their bookings.
+
+---
+
+### 💳 Payment Processing
+
+Processes payments for bookings through a secure endpoint. It tracks transaction status and ensures that payment records are tied to specific bookings, forming the financial backbone of the platform.
+
+---
+
+### ⭐ Review System
+
+Allows users to leave ratings and reviews for properties they've stayed in. Reviews help maintain transparency and guide other users in choosing quality listings.
+
+---
+
+### ⚡ Data Optimization
+
+Implements indexing and caching strategies to improve database performance. This ensures efficient data retrieval, especially for frequently accessed endpoints such as property searches and booking histories.
+
+
 
 ### **Users**
 GET /users/
